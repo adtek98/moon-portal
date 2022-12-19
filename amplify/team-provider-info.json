@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-moonportal-dev-113002-authRole",
+      "UnauthRoleArn": "arn:aws:iam::296720542607:role/amplify-moonportal-dev-113002-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::296720542607:role/amplify-moonportal-dev-113002-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-moonportal-dev-113002-deployment",
+      "UnauthRoleName": "amplify-moonportal-dev-113002-unauthRole",
+      "StackName": "amplify-moonportal-dev-113002",
+      "StackId": "arn:aws:cloudformation:eu-north-1:296720542607:stack/amplify-moonportal-dev-113002/9a04c3f0-7d2c-11ed-b9e8-0ef22ce32176",
+      "AmplifyAppId": "d27aqdibmc3r55"
+    }
+  }
+}

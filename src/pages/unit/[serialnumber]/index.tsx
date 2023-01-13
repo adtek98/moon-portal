@@ -1,8 +1,6 @@
 import { GetServerSideProps, GetStaticProps } from 'next';
 import {PortalLayout} from '../../../components/PortalLayout'
 
-
-
 export default function Unit() {
   return (
     <>
@@ -19,12 +17,18 @@ export default function Unit() {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const res = await fetch(`http://localhost:3001/units/`);
+  const res = await fetch(`http://localhost:3001/units`);
   const units = await res.json();
+  const unit = 1;
+  units.map(x => ({
+      console.log(x.name)
 
+    }));
+  
+  console.log(context.params.serialnumber);
   return{
     props: {
-      units
+      unit
     }
   }
 }

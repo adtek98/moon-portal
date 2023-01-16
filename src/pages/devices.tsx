@@ -11,7 +11,7 @@ export default function Devices({units})  {
       
       <PortalLayout>
         <div className='titleContainer border border-gray-500 border-x-0 border-t-0'>
-          <h1 className='text-3xl text-bold font-bold mb-2'>MOON UNITS</h1>
+          <h1 className='text-3xl text-bold font-bold mb-2'>MOON UNITS</h1> 
         </div>
         <UnitContainer units={units}/>
       </PortalLayout>
@@ -20,7 +20,7 @@ export default function Devices({units})  {
 }
   
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('http://localhost:3001/units/');
+  const res = await fetch('https://63c5ab2bf80fabd877edd241.mockapi.io/units');
   const units = await res.json();
 
   return{

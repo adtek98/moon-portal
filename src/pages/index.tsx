@@ -10,7 +10,6 @@ export default function Home() {
           <h1 className='text-3xl text-bold font-bold mb-2'>MOON SUPPORT</h1>
         </div>
         <div className='listContainer'>
-          
         </div>
       </PortalLayout>
     </>

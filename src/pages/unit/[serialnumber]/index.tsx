@@ -12,9 +12,9 @@ export default function Unit({unit}) {
       <PortalLayout>
         <div className='titleContainer border border-gray-500 border-x-0 border-t-0 flex justify-between'>
           <h1 className='text-3xl text-bold font-bold mb-2'>{unit.name}</h1>
-          <Link href='/devices' className='text-4xl'><FontAwesomeIcon icon={faArrowLeftLong} /></Link>
+          <Link href='/devices' className='text-4xl text-gray-500 hover:text-white'><FontAwesomeIcon icon={faArrowLeftLong} /></Link>
         </div>
-        <div className='listContainer'>
+        <div className='listContainer'>1
           <p>SerialNumber: {unit.serialNumber}</p>
           <p>Registered: {unit.registered}</p>
         </div>

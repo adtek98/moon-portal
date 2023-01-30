@@ -20,7 +20,7 @@ export default function Unit({unit}) {
             <div className='font-bold text-xl mb-3 mt-1 border border-gray-500 border-x-0 border-t-0 flex justify-between items-end'>
               <h1 className=''>BILLING DATA</h1>
             </div>
-            <div className='grid lg:grid-cols-2 grid-cols-1 gap-4'>
+            <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4'>
               <div>
                 <p className='font-thin text-sm mx-2 mb-px'>Days In Usage:</p>
                 <div className='bg-gray-700 h-10 rounded rounded-xl flex items-center'>
@@ -52,41 +52,61 @@ export default function Unit({unit}) {
           </div>
           <div className='px-2 py-3 bg-gray-600 rounded-xl text-sm'>
             <div className='font-bold text-xl mb-3 mt-1 border border-gray-500 border-x-0 border-t-0 flex justify-between items-end'>
-              <h1 className=''>SUPPORT</h1>
+              <h1 className=''>USER DATA</h1>
             </div>
-            <div className='grid lg:grid-cols-2 grid-cols-1 gap-4'>
+            <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4'>
               <div>
-                <p className='font-thin text-sm mx-2 mb-px'>Health Status:</p>
+                <p className='font-thin text-sm mx-2 mb-px'>Moon Unit:</p>
                 <div className='bg-gray-700 h-10 rounded rounded-xl flex items-center justify-between'>
-                  <p className='font-semibold mx-2 text-green-500'>GOOD</p> 
-                  <Link href='/' className='bg-gray-800 h-full flex items-center rounded-r-xl'>
+                  <p className='font-semibold mx-2'>Settings</p>
+                  <Link href='/' className='bg-gray-800 h-full flex items-center rounded-r-xl hover:bg-gray-900'>
+                    <p className='mx-3'>Details</p>
+                  </Link>
+                </div>
+                <div className='mt-3 bg-gray-700 h-10 rounded rounded-xl flex items-center justify-between'>
+                  <p className='font-semibold mx-2'>Presets</p>
+                  <Link href='/' className='bg-gray-800 h-full flex items-center rounded-r-xl hover:bg-gray-900'>
                     <p className='mx-3'>Details</p>
                   </Link>
                 </div>
               </div>
               <div>
-                <p className='font-thin text-sm mx-2 mb-px'>Owner:</p>
-                <div className='bg-gray-700 h-10 rounded rounded-xl flex items-center'>
-                  <p className='font-semibold mx-2'>{unit.owner}</p>
+                <p className='font-thin text-sm mx-2 mb-px'>Eyes Unit:</p>
+                <div className='bg-gray-700 h-10 rounded rounded-xl flex items-center justify-between'>
+                  <p className='font-semibold mx-2'>Eye Mappings</p>
+                  <Link href='/' className='bg-gray-800 h-full flex items-center rounded-r-xl hover:bg-gray-900'>
+                    <p className='mx-3'>Details</p>
+                  </Link>
+                </div>
+                <div className='mt-3 bg-gray-700 h-10 rounded rounded-xl flex items-center justify-between'>
+                  <p className='font-semibold mx-2'>Lens Mappings</p>
+                  <Link href='/' className='bg-gray-800 h-full flex items-center rounded-r-xl hover:bg-gray-900'>
+                    <p className='mx-3'>Details</p>
+                  </Link>
                 </div>
               </div>
             </div>           
           </div>
           <div className='px-2 py-3 bg-gray-600 rounded-xl text-sm'>
             <div className='font-bold text-xl mb-3 mt-1 border border-gray-500 border-x-0 border-t-0 flex justify-between items-end'>
-              <h1 className=''>USER DATA</h1>
+              <h1 className=''>SUPPORT</h1>
             </div>
-            <div className='grid lg:grid-cols-2 grid-cols-1 gap-4'>
+            <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4'>
               <div>
-                <p className='font-thin text-sm mx-2 mb-px'>Unit Name:</p>
-                <div className='bg-gray-700 h-10 rounded rounded-xl flex items-center'>
-                  <p className='font-semibold mx-2'>{unit.name}</p>
+                <p className='font-thin text-sm mx-2 mb-px'>Health Status:</p>
+                <div className='bg-gray-700 h-10 rounded rounded-xl flex items-center justify-between py-1 px-1'>
+                  <p className='font-semibold mx-2 text-green-500'>GOOD</p> 
+                  <Link href='/' className='bg-gray-800 h-full flex items-center rounded-xl hover:bg-gray-900'>
+                    <p className='mx-3'>Details</p>
+                  </Link>
                 </div>
               </div>
               <div>
-                <p className='font-thin text-sm mx-2 mb-px'>Owner:</p>
-                <div className='bg-gray-700 h-10 rounded rounded-xl flex items-center'>
-                  <p className='font-semibold mx-2'>{unit.owner}</p>
+                <p className='font-thin text-sm mx-2 mb-px'>Logs:</p>
+                <div className='bg-gray-700 h-10 rounded rounded-xl flex items-center py-0.5 px-1'>
+                  <Link href='/' className='bg-gray-800 h-full w-full rounded-xl hover:bg-gray-900'>
+                    <p className='mx-3 text-center my-2'>View Logs</p>
+                  </Link>
                 </div>
               </div>
             </div>           

@@ -2,6 +2,7 @@ import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GetServerSideProps, GetStaticPaths } from "next";
 import Link from "next/link";
+import Loading from "../../../../components/Loading";
 import { PortalLayout } from "../../../../components/PortalLayout";
 
 
@@ -13,7 +14,6 @@ export default function Edit({unit}) {
           <h1 className='text-3xl font-bold'>EDIT {unit.name}</h1>
           <Link href='/unit/[serialnumber]' as={`/unit/${unit.serialNumber}`} className='text-4xl text-gray-500 hover:text-white'><FontAwesomeIcon icon={faArrowLeftLong} /></Link>
         </div>
-       
       </PortalLayout>
     </>
   )

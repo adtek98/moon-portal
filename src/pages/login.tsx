@@ -7,7 +7,7 @@ export default function Login() {
         <div className="bg-gray-700 w-full rounded-lg border border-gray-600 md:mt-0 sm:max-w-md xl:p-0">
           <div className="p-6">
             <div className="mb-3 ">
-              <h1 className="text-xl font-bold text-2xl">MOON LOG IN</h1>
+              <h1 className="text-2xl font-bold">MOON LOG IN</h1>
             </div>
             <form className="space-y-4 md:space-y-6" action="#">
               <div>

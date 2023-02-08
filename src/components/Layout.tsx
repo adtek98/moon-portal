@@ -4,13 +4,12 @@ import { PortalLayout } from "./PortalLayout";
 
 export const Layout = ({ children }) => {
   const router = useRouter();
-  console.log(router.pathname);
   if (router.pathname == "/login") {
     return (
       <>
         <main className="h-screen overflow-hidden">
           <Header />
-          {children}
+          <div className="h-[93%]">{children}</div>
         </main>
       </>
     );

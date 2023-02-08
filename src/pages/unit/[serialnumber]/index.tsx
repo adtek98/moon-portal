@@ -1,14 +1,9 @@
-import {
-  faArrowLeftLong,
-  faPenToSquare,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import { GetServerSideProps, GetStaticPaths } from "next";
-import { PortalLayout } from "../../../components/PortalLayout";
 import { UnitBillingData } from "../../../components/UnitInfoComponents/UnitBillingData";
 import { UnitSystemInfo } from "../../../components/UnitInfoComponents/UnitSystemInfo";
-
-import Link from "next/link";
 import { UnitUserData } from "../../../components/UnitInfoComponents/UnitUserData";
 import { UnitSupport } from "../../../components/UnitInfoComponents/UnitSupport";
 

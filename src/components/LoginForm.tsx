@@ -21,7 +21,7 @@ export default function LoginForm() {
   const onSubmit = (data: FormData) => console.log(data);
   return (
     <>
-      <div className="bg-gray-700 border border-gray-500 lg:w-[32rem] mt-48 mx-auto rounded-lg p-10">
+      <div className="bg-gray-700 h-full md:h-auto lg:h-auto lg:w-[32rem] md:w-[32rem] md:mt-48 lg:mt-48 mx-auto rounded-lg p-10">
         <div className="border-b mb-5">
           <h1 className="text-4xl font-bold">MOON portal</h1>
         </div>

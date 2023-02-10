@@ -6,16 +6,16 @@ import { UnitBillingData } from "../../../components/UnitInfoComponents/UnitBill
 import { UnitSystemInfo } from "../../../components/UnitInfoComponents/UnitSystemInfo";
 import { UnitUserData } from "../../../components/UnitInfoComponents/UnitUserData";
 import { UnitSupport } from "../../../components/UnitInfoComponents/UnitSupport";
+import TitleContainer from "../../../components/TitleContainer";
 
 export default function Unit({ unit }) {
   return (
     <>
-      <div className="titleContainer border border-gray-500 border-x-0 border-t-0 flex justify-between pb-2">
-        <h1 className="text-3xl font-bold">{unit.name}</h1>
+      <TitleContainer title={unit.name}>
         <Link href="/fleet" className="text-4xl text-gray-500 hover:text-white">
           <FontAwesomeIcon icon={faArrowLeftLong} />
         </Link>
-      </div>
+      </TitleContainer>
       <div className="py-2 grid grid-cols-4 gap-5">
         <UnitSystemInfo unit={unit} />
         <UnitBillingData />

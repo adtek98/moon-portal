@@ -11,7 +11,7 @@ export default function Fleet({units})  {
       
       <PortalLayout>
         <div className='titleContainer border border-gray-500 border-x-0 border-t-0'>
-          <h1 className='text-3xl text-bold font-bold mb-2'>FLEET MANAGMENT</h1> 
+          <h1 className='lg:text-3xl text-2xl text-bold font-bold mb-2'>FLEET MANAGMENT</h1> 
         </div>
         <UnitContainer units={units}/>
       </PortalLayout>

@@ -10,7 +10,6 @@ export default function Login() {
                 MOON LOG IN
             </h1>
           </div>
-
           <form className="space-y-4 md:space-y-6" action="#">
             <div>
                 <label className="block mb-2 text-sm font-medium">Username</label>

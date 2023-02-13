@@ -9,7 +9,6 @@ export const Layout = ({children}) => {
                 <Header />
                 {children}
             </main>
-            
         </>
 
     )

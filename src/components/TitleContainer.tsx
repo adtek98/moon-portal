@@ -1,4 +1,4 @@
-export default function Home({ title, children }) {
+export default function TitleContainer({ title, children }) {
   return (
     <>
       <div className="titleContainer border border-gray-500 border-x-0 border-t-0 flex justify-between items-start">

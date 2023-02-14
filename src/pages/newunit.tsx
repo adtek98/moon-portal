@@ -1,85 +1,78 @@
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
+import TitleContainer from "../components/TitleContainer";
 
-export const UnitSystemInfo = ({ unit }) => {
+export default function NewUnit() {
   return (
     <>
-      <div className="px-2 py-5 bg-gray-600 p-1 rounded-xl col-span-4">
+      <TitleContainer
+        title={"CREATE NEW UNIT"}
+        children={undefined}
+      ></TitleContainer>
+
+      <div className="px-2 py-8 bg-gray-600 p-1 rounded-xl mt-2">
         <form>
-          <div className="font-bold text-xl mb-3 border border-gray-500 border-x-0 border-t-0 flex justify-between items-end">
-            <h1 className="mr-4">SYSTEM INFO</h1>
-            <button className="text text-gray-500 hover:text-white text-2xl">
-              <FontAwesomeIcon icon={faPenToSquare} />
-            </button>
-          </div>
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 text-sm">
-            <div>
+          <div className="text-sm w-80 ">
+            <div className="mb-2">
               <p className="font-thin text-sm mx-2 mb-px">Unit Name:</p>
               <input
-                disabled
                 className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
                 type="text"
-                defaultValue={unit.name}
               />
             </div>
-            <div>
+            <div className="my-2">
               <p className="font-thin text-sm mx-2 mb-px">Owner:</p>
               <input
-                disabled
                 className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
                 type="text"
-                defaultValue={unit.owner}
               />
             </div>
-            <div>
+            <div className="my-2">
               <p className="font-thin text-sm mx-2 mb-px">Registered:</p>
               <input
-                disabled
                 className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
                 type="text"
-                defaultValue={unit.registered}
               />
             </div>
-            <div>
+            <div className="my-2">
               <p className="font-thin text-sm mx-2 mb-px">SerialNumber:</p>
               <input
-                disabled
                 className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
                 type="text"
-                defaultValue={unit.serialNumber}
               />
             </div>
-            <div>
+            <div className="my-2">
               <p className="font-thin text-sm mx-2 mb-px">Firmware:</p>
               <input
-                disabled
                 className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
                 type="text"
-                defaultValue={unit.firmware}
               />
             </div>
-            <div>
+            <div className="my-2">
               <p className="font-thin text-sm mx-2 mb-px">EyesSerial:</p>
               <input
-                disabled
                 className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
                 type="text"
-                defaultValue={unit.eyesSerial}
               />
             </div>
-            <div>
+            <div className="my-2">
               <p className="font-thin text-sm mx-2 mb-px">Location:</p>
               <input
-                disabled
                 className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
                 type="text"
-                defaultValue={unit.location}
               />
+            </div>
+            <div className="mt-5">
+              <button
+                className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full text-sm"
+                type="submit"
+              >
+                <p>CREATE</p>
+              </button>
             </div>
           </div>
         </form>
       </div>
     </>
   );
-};
+}

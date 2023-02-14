@@ -1,11 +1,9 @@
-import { PortalLayout } from "./PortalLayout";
-import Image from "next/image";
-
 export default function Loading() {
   return (
     <>
-      <Image
-        className="m-auto h-full"
+      <img
+        unselectable="on"
+        className="m-auto h-full noselect"
         src={"/Spinner.svg"}
         alt={""}
         height={200}

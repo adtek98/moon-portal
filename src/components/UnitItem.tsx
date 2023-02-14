@@ -10,7 +10,7 @@ export const UnitItem = ({ units }) => {
         >
           <div>
             <p className="text-lg">{unit.name}</p>
-            <p className="text-sm font-light">Registered: {unit.registered}</p>
+            <p className="text-sm font-light">Location: {unit.location}</p>
             <p className="text-sm font-light">
               SerialNumber: {unit.serialNumber}
             </p>

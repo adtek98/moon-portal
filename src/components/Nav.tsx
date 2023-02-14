@@ -1,27 +1,36 @@
 import Link from "next/link";
 
+const routes = [
+  { name: "HOME", path: "/" },
+  { name: "FLEET", path: "/fleet" },
+  { name: "CREATE UNIT", path: "/newunit" },
+];
+
 export const Nav = () => {
   return (
     <>
-      <div className="py-12 px-10 w-1/6 text-center text-gray-500 hidden lg:block">
-        <ul className="h-[95%] w-full">
-          <Link href="/" className="w-full">
-            <li className="border border-x-0 border-t-0 my-3 border-gray-500 hover:border-white hover:text-white">
-              HOME
+      <nav className="h-full w-fit lg:w-full mx-auto">
+        <ul className="h-[95%]">
+          {routes.map((r) => (
+            <li>
+              <Link href={r.path}>
+                <p className="border border-x-0 border-t-0 my-3 border-gray-500 hover:border-white hover:text-white">
+                  {r.name}
+                </p>
+              </Link>
             </li>
-          </Link>
-          <Link href="/fleet" className="w-full">
-            <li className="border border-x-0 border-t-0 my-3 border-gray-500 hover:border-white hover:text-white">
-              FLEET
-            </li>
-          </Link>
+          ))}
         </ul>
-        <ul className="h-[5%] w-full">
-          <li className="border border-x-0 border-t-0 border-gray-500 hover:border-white hover:text-white">
-            <Link href="/login">LOG OUT</Link>
+        <ul className="h-[5%]">
+          <li className="">
+            <Link className="" href="/login">
+              <p className="border border-x-0 border-t-0 my-3 border-gray-500 hover:border-white hover:text-white">
+                LOG OUT
+              </p>
+            </Link>
           </li>
         </ul>
-      </div>
+      </nav>
     </>
   );
 };

@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { Layout } from "../components/Layout";
-import "../../styles/globals.css";
+import "../styles/globals.css";
 import { Router } from "next/router";
 import { useState } from "react";
 import Loading from "../components/Loading";

@@ -3,7 +3,7 @@ import TitleContainer from "../components/TitleContainer";
 import { UnitContainer } from "../components/UnitContainer";
 
 export default function Fleet({ units }) {
-  const title = "FLEET";
+  const title = "Fleet";
   return (
     <>
       <TitleContainer title={title} children={undefined}></TitleContainer>

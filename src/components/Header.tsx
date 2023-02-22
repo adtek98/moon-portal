@@ -5,7 +5,7 @@ import Image from "next/image";
 export const Header = () => {
   return (
     <>
-      <div className="flex justify-between top-0 w-full bg-black h-[7%]">
+      <div className="flex justify-between top-0 w-full bg-black h-[6%] flex-none">
         <img
           className="object-contain"
           src="/MoonLogo2.jpeg"

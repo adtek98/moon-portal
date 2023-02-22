@@ -6,13 +6,13 @@ export default function NewUnit() {
   return (
     <>
       <TitleContainer
-        title={"CREATE NEW UNIT"}
+        title={"Create new unit"}
         children={undefined}
       ></TitleContainer>
 
-      <div className="px-2 py-8 bg-gray-600 p-1 rounded-xl mt-2">
+      <div className="px-2 py-8 bg-gray-600 p-1 rounded-xl mt-2 mx-auto w-80">
         <form>
-          <div className="text-sm w-80 ">
+          <div className="text-sm">
             <div className="mb-2">
               <p className="font-thin text-sm mx-2 mb-px">Unit Name:</p>
               <input

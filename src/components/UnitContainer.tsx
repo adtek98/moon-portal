@@ -17,38 +17,47 @@ export const UnitContainer = ({ units }) => {
 
   // sorting function
   const sortList = (data) => {
-    if (sorting == "a>z") {
+    if (sorting == "n:a>z") {
       return data.sort((a, b) => (a.name > b.name ? 1 : -1));
     }
-    if (sorting == "z>a") {
+    if (sorting == "n:z>a") {
       return data.sort((a, b) => (a.name > b.name ? -1 : 1));
     }
+    if (sorting == "l:a>z") {
+      return data.sort((a, b) => (a.location > b.location ? 1 : -1));
+    }
+    if (sorting == "l:z>a") {
+      return data.sort((a, b) => (a.location > b.location ? -1 : 1));
+    }
+
     return data;
   };
 
   return (
     <>
-      <div className="max-h-full overflow-auto ">
-        <div className="lg:w-10/12 mx-auto">
-          <div className="m-auto flex justify-between items-center">
-            <select
-              onChange={(e) => setSorting(e.target.value)}
-              defaultValue={"DEFAULT"}
-              className="h-10 lg:w-1/6 bg-gray-700 my-3 text-center border border-gray-400 border-x-0 border-t-0 text-gray-400"
-            >
-              <option value={"DEFAULT"} hidden>
-                SORT AFTER
-              </option>
-              <option value="a>z">NAME A &gt; Z</option>
-              <option value="z>a">NAME Z &gt; A</option>
-            </select>
-            <input
-              type="text"
-              className="h-10 lg:w-1/6 bg-gray-700 text-center border border-gray-400 border-x-0 border-t-0"
-              placeholder="SEARCH"
-              onChange={(e) => setQuery(e.target.value)}
-            />
-          </div>
+      <div className="m-auto flex justify-between items-center h-[10%]">
+        <select
+          onChange={(e) => setSorting(e.target.value)}
+          defaultValue={"DEFAULT"}
+          className="h-10 lg:w-1/6 w-44 bg-gray-700 my-3 text-center border border-gray-400 border-x-0 border-t-0 text-gray-400"
+        >
+          <option value={"DEFAULT"} hidden>
+            SORT AFTER
+          </option>
+          <option value="n:a>z">NAME: A &gt; Z</option>
+          <option value="n:z>a">NAME: Z &gt; A</option>
+          <option value="l:a>z">LOCATION: A &gt; Z</option>
+          <option value="l:z>a">LOCATION: Z &gt; A</option>
+        </select>
+        <input
+          type="text"
+          className="h-10 lg:w-1/6 w-44 bg-gray-700 text-center border border-gray-400 border-x-0 border-t-0"
+          placeholder="SEARCH"
+          onChange={(e) => setQuery(e.target.value)}
+        />
+      </div>
+      <div className="max-h-[90%] overflow-auto ">
+        <div className=" mx-auto">
           <ul className="pb-3">
             <UnitItem units={sortList(search(units))} />
           </ul>

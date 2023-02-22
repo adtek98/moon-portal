@@ -6,7 +6,7 @@ export const UnitItem = ({ units }) => {
       {units.map((unit, index) => (
         <li
           key={index}
-          className="w-full border border-gray-500 hover:border-white border-x-0 border-t-0 my-3 flex items-end justify-between"
+          className="w-full border border-gray-500 hover:border-white border-x-0 border-t-0  flex items-end justify-between"
         >
           <div>
             <p className="text-lg">{unit.name}</p>

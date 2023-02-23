@@ -56,12 +56,20 @@ export const UnitContainer = ({ units }) => {
           onChange={(e) => setQuery(e.target.value)}
         />
       </div>
-      <div className="max-h-[90%] overflow-auto ">
-        <div className=" mx-auto">
-          <ul className="pb-3">
+      <div className="max-h-[90%] overflow-auto">
+        <table className="mx-auto md:w-11/12 lg:w-11/12">
+          <thead>
+            <tr className="text-left shadow-xl">
+              <th className="w-1/4">Name</th>
+              <th className="w-1/4">Location</th>
+              <th className="w-1/4">Serial Number</th>
+              <th className="w-1/4"></th>
+            </tr>
+          </thead>
+          <tbody>
             <UnitItem units={sortList(search(units))} />
-          </ul>
-        </div>
+          </tbody>
+        </table>
       </div>
     </>
   );

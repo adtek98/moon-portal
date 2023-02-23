@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
 import { Header } from "./Header";
 import PortalLayout from "./PortalLayout";
-import { Poppins } from "@next/font/google";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Layout = ({ children }) => {
   const router = useRouter();
@@ -9,9 +10,9 @@ export const Layout = ({ children }) => {
     return (
       <>
         <main className={`h-screen max-h-screen overflow-hidden font-mono`}>
-          <Header />
-          <div className="m-auto">{children}</div>
+          {children}
         </main>
+        <ToastContainer />
       </>
     );
   }
@@ -21,6 +22,18 @@ export const Layout = ({ children }) => {
         <Header />
         <PortalLayout>{children}</PortalLayout>
       </main>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </>
   );
 };

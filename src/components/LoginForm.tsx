@@ -2,6 +2,8 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useRouter } from "next/router";
+import { toast } from "react-toastify";
+import Users from "../../data/Users";
 
 const schema = yup
   .object({
@@ -21,11 +23,38 @@ export default function LoginForm() {
     resolver: yupResolver(schema),
   });
   const onSubmit = (data: FormData) => {
-    console.log(data);
-    router.push("/");
+    const user = Users.user.find(
+      (user) =>
+        data.userName === user.username && data.passWord === user.username
+    );
+    console.log(user == null);
+    if (user == null) {
+      toast.error("Please enter correct username and password", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } else {
+      router.push("/");
+      toast.success("Welcome", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    }
   };
   return (
-    <div className="m-auto lg:w-[32rem] md:w-[32rem] px-10 py-5">
+    <div className="lg:w-[32rem] md:w-[32rem] px-10 py-5">
       <div className="mb-5"></div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="h-20 mb-2">

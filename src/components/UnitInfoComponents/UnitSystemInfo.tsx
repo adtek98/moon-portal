@@ -16,7 +16,7 @@ export default function UnitSystemInfo({ unit }) {
   };
   if (editable) {
     return (
-      <div className="px-2 py-5 bg-gray-600 p-1 rounded-xl col-span-4">
+      <div className="infoContainer col-span-2 row-span-2">
         <div className="font-bold text-xl mb-3 border border-gray-500 border-x-0 border-t-0 flex justify-between items-end">
           <h1 className="mr-4">SYSTEM INFO - edit mode</h1>
           <button
@@ -27,59 +27,59 @@ export default function UnitSystemInfo({ unit }) {
           </button>
         </div>
         <form>
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 text-sm">
+          <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
             <div>
-              <p className="font-thin text-sm mx-2 mb-px">Unit Name:</p>
+              <p className="font-thin mx-2 mb-px">Unit Name:</p>
               <input
-                className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
+                className="infoColumn pl-2"
                 type="text"
                 defaultValue={unit.name}
               />
             </div>
             <div>
-              <p className="font-thin text-sm mx-2 mb-px">Owner:</p>
+              <p className="font-thin mx-2 mb-px">Owner:</p>
               <input
-                className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
+                className="infoColumn pl-2"
                 type="text"
                 defaultValue={unit.owner}
               />
             </div>
             <div>
-              <p className="font-thin text-sm mx-2 mb-px">Registered:</p>
+              <p className="font-thin mx-2 mb-px">Registered:</p>
               <input
-                className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
+                className="infoColumn pl-2"
                 type="text"
                 defaultValue={unit.registered}
               />
             </div>
             <div>
-              <p className="font-thin text-sm mx-2 mb-px">SerialNumber:</p>
+              <p className="font-thin mx-2 mb-px">SerialNumber:</p>
               <input
-                className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
+                className="infoColumn pl-2"
                 type="text"
                 defaultValue={unit.serialNumber}
               />
             </div>
             <div>
-              <p className="font-thin text-sm mx-2 mb-px">Firmware:</p>
+              <p className="font-thin mx-2 mb-px">Firmware:</p>
               <input
-                className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
+                className="infoColumn pl-2"
                 type="text"
                 defaultValue={unit.firmware}
               />
             </div>
             <div>
-              <p className="font-thin text-sm mx-2 mb-px">EyesSerial:</p>
+              <p className="font-thin mx-2 mb-px">EyesSerial:</p>
               <input
-                className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
+                className="infoColumn pl-2"
                 type="text"
                 defaultValue={unit.eyesSerial}
               />
             </div>
             <div>
-              <p className="font-thin text-sm mx-2 mb-px">Location:</p>
+              <p className="font-thin mx-2 mb-px">Location:</p>
               <input
-                className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
+                className="infoColumn pl-2"
                 type="text"
                 defaultValue={unit.location}
               />
@@ -90,7 +90,7 @@ export default function UnitSystemInfo({ unit }) {
     );
   }
   return (
-    <div className="px-2 py-5 bg-gray-600 p-1 rounded-xl col-span-4">
+    <div className="infoContainer col-span-2 row-span-2">
       <div className="font-bold text-xl mb-3 border border-gray-500 border-x-0 border-t-0 flex justify-between items-end">
         <h1 className="mr-4">SYSTEM INFO</h1>
         <button
@@ -101,66 +101,66 @@ export default function UnitSystemInfo({ unit }) {
         </button>
       </div>
       <form>
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 text-sm">
+        <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-4">
           <div>
-            <p className="font-thin text-sm mx-2 mb-px">Unit Name:</p>
+            <p className="font-thin mx-2 mb-px">Unit Name:</p>
             <input
               disabled
-              className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
+              className="infoColumn pl-2"
               type="text"
               defaultValue={unit.name}
             />
           </div>
           <div>
-            <p className="font-thin text-sm mx-2 mb-px">Owner:</p>
+            <p className="font-thin mx-2 mb-px">Owner:</p>
             <input
               disabled
-              className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
+              className="infoColumn pl-2"
               type="text"
               defaultValue={unit.owner}
             />
           </div>
           <div>
-            <p className="font-thin text-sm mx-2 mb-px">Registered:</p>
+            <p className="font-thin mx-2 mb-px">Registered:</p>
             <input
               disabled
-              className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
+              className="infoColumn pl-2"
               type="text"
               defaultValue={unit.registered}
             />
           </div>
           <div>
-            <p className="font-thin text-sm mx-2 mb-px">SerialNumber:</p>
+            <p className="font-thin mx-2 mb-px">SerialNumber:</p>
             <input
               disabled
-              className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
+              className="infoColumn pl-2"
               type="text"
               defaultValue={unit.serialNumber}
             />
           </div>
           <div>
-            <p className="font-thin text-sm mx-2 mb-px">Firmware:</p>
+            <p className="font-thin mx-2 mb-px">Firmware:</p>
             <input
               disabled
-              className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
+              className="infoColumn pl-2"
               type="text"
               defaultValue={unit.firmware}
             />
           </div>
           <div>
-            <p className="font-thin text-sm mx-2 mb-px">EyesSerial:</p>
+            <p className="font-thin mx-2 mb-px">EyesSerial:</p>
             <input
               disabled
-              className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
+              className="infoColumn pl-2"
               type="text"
               defaultValue={unit.eyesSerial}
             />
           </div>
           <div>
-            <p className="font-thin text-sm mx-2 mb-px">Location:</p>
+            <p className="font-thin mx-2 mb-px">Location:</p>
             <input
               disabled
-              className="bg-gray-700 h-10 rounded-xl font-semibold px-2 w-full"
+              className="infoColumn pl-2"
               type="text"
               defaultValue={unit.location}
             />

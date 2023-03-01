@@ -9,10 +9,21 @@ export const Layout = ({ children }) => {
   if (router.pathname == "/login") {
     return (
       <>
-        <main className={`h-screen max-h-screen overflow-hidden font-mono`}>
+        <main className={`h-screen max-h-screen overflow-hidden font-sans`}>
           {children}
         </main>
-        <ToastContainer />
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
       </>
     );
   }

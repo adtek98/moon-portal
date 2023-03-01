@@ -9,9 +9,9 @@ export const UnitContainer = ({ units }) => {
   const search = (data) => {
     return data.filter(
       (item) =>
-        item.name.toLowerCase().includes(query) ||
-        item.location.toLowerCase().includes(query) ||
-        item.serialNumber.includes(query)
+        item.name.toLowerCase().includes(query.toLowerCase()) ||
+        item.location.toLowerCase().includes(query.toLowerCase()) ||
+        item.serialNumber.includes(query.toLowerCase())
     );
   };
 
@@ -39,7 +39,7 @@ export const UnitContainer = ({ units }) => {
         <select
           onChange={(e) => setSorting(e.target.value)}
           defaultValue={"DEFAULT"}
-          className="h-10 lg:w-1/6 w-44 bg-gray-700 my-3 text-center border border-gray-400 border-x-0 border-t-0 text-gray-400"
+          className="focus:fo h-10 lg:w-1/6 w-44 bg-gray-700 my-3 text-center border border-gray-400 border-x-0 border-t-0 text-gray-400"
         >
           <option value={"DEFAULT"} hidden>
             SORT AFTER
@@ -58,12 +58,12 @@ export const UnitContainer = ({ units }) => {
       </div>
       <div className="max-h-[90%] overflow-auto">
         <table className="mx-auto md:w-11/12 lg:w-11/12">
-          <thead>
-            <tr className="text-left shadow-xl">
+          <thead className="sticky">
+            <tr className="text-center shadow-xl">
               <th className="w-1/4">Name</th>
               <th className="w-1/4">Location</th>
               <th className="w-1/4">Serial Number</th>
-              <th className="w-1/4"></th>
+              <th className="w-1/4">Owner</th>
             </tr>
           </thead>
           <tbody>

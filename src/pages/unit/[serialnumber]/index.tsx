@@ -2,11 +2,12 @@ import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { GetServerSideProps, GetStaticPaths } from "next";
-import { UnitBillingData } from "../../../components/UnitInfoComponents/UnitBillingData";
+import UnitBillingData from "../../../components/UnitInfoComponents/UnitBillingData";
 import UnitSystemInfo from "../../../components/UnitInfoComponents/UnitSystemInfo";
-import { UnitUserData } from "../../../components/UnitInfoComponents/UnitUserData";
-import { UnitSupport } from "../../../components/UnitInfoComponents/UnitSupport";
+import UnitUserData from "../../../components/UnitInfoComponents/UnitUserData";
+import UnitSupport from "../../../components/UnitInfoComponents/UnitSupport";
 import TitleContainer from "../../../components/TitleContainer";
+import UnitMetaData from "../../../components/UnitInfoComponents/UnitMetaData";
 
 export default function Unit({ unit }) {
   return (
@@ -16,11 +17,12 @@ export default function Unit({ unit }) {
           <FontAwesomeIcon icon={faArrowLeftLong} />
         </Link>
       </TitleContainer>
-      <div className="py-2 grid grid-cols-4 gap-5">
+      <div className="py-2 grid md:grid-cols-4 lg:grid-cols-4 lg:grid-rows-3 gap-5">
         <UnitSystemInfo unit={unit} />
         <UnitBillingData />
         <UnitUserData />
         <UnitSupport />
+        <UnitMetaData />
       </div>
     </>
   );

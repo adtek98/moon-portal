@@ -34,3 +34,15 @@ a {
 .bgImage {
   background-image: url("/public/BgImage.jpg");
 }
+
+.infoContainer {
+  @apply px-2 py-5 bg-gray-600 p-1 text-sm rounded-sm shadow-xl;
+}
+
+.infoColumn {
+  @apply bg-gray-700 h-10 w-full rounded-sm flex items-center justify-between;
+}
+
+.infoButton {
+  @apply bg-gray-800 h-full w-24 rounded-r-sm hover:bg-gray-900;
+}

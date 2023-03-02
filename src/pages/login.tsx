@@ -1,18 +1,22 @@
 import LoginForm from "../components/LoginForm";
 import Image from "next/image";
-import bgImage from "public/LoginBg.png";
+import bgImage from "public/moon-portal.png";
 export default function Login() {
   return (
     <>
       <div className="h-full lg:bg-[url('/LoginBg.png')] bg-contain bg-repeat-round grid">
-        <div className="w-full m-auto lg:flex justify-center">
-          <div className="select-none">
-            <div className="text-left font-bold text-6xl px-10 py-5 mr-10">
+        <div className="w-11/12 my-auto lg:flex justify-center">
+          <div className="select-none lg:w-1/4 mr-10">
+            <Image src={bgImage} alt={""}></Image>
+
+            {/* <div className="text-left font-bold text-6xl px-10 py-5 ">
               <h1 className="mb-2 ">Welcome To</h1>
               <h1>MOON Portal</h1>
-            </div>
+            </div> */}
           </div>
-          <LoginForm />
+          <div className="mt-8">
+            <LoginForm />
+          </div>
         </div>
       </div>
     </>

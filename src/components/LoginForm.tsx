@@ -35,7 +35,7 @@ export default function LoginForm() {
     toast.error("Username or password does not match, please try again");
   };
   return (
-    <div className="lg:w-[28rem] md:w-[32rem] px-10 py-5">
+    <div className="lg:w-[28rem] md:w-[32rem] px-10">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="h-20 mb-2">
           <label className="text-sm">Username</label>

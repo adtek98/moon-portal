@@ -9,6 +9,20 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import * as yup from "yup";
 
+const schema = yup
+  .object({
+    name: yup.string().required(""),
+    owner: yup.string().required(""),
+    registered: yup.string().required(""),
+    serial: yup.string().required(""),
+    firmware: yup.string().required(""),
+    eyesSerial: yup.string().required(""),
+    location: yup.string().required(""),
+    eyesFirmware: yup.string().required(""),
+  })
+  .required();
+type FormData = yup.InferType<typeof schema>;
+
 export default function UnitSystemInfo({ unit }) {
   const [editable, setEditable] = useState(false);
 
@@ -20,11 +34,12 @@ export default function UnitSystemInfo({ unit }) {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = () => {};
+  const onSubmit = async (event) => {
+    console.log(event);
+  };
 
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(e);
     if (editable) {
       setEditable(false);
       toast.info("Edit mode deactivated");
@@ -37,12 +52,17 @@ export default function UnitSystemInfo({ unit }) {
     return (
       <div className="infoContainer col-span-2 row-span-2">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="font-bold text-xl mb-3 mt-1 border border-gray-500 border-x-0 border-t-0 flex justify-between items-end">
+          <div
+            className="font-bold text-xl mb  const onSubmit = async (event) => {
+    event.preventDefault();
+
+    console.log(event.FormData);
+  };-3 mt-1 border border-gray-500 border-x-0 border-t-0 flex justify-between items-end"
+          >
             <h1 className="mr-4">SYSTEM INFO - edit mode</h1>
             <div className="flex">
               <button
                 className="mr-3 text-gray-500 hover:text-white text-2xl"
-                onClick={(e) => handleClick(e)}
                 type="submit"
               >
                 <CheckIcon className="w-7 h-7" />
@@ -62,6 +82,7 @@ export default function UnitSystemInfo({ unit }) {
                 className="infoColumn pl-2"
                 type="text"
                 defaultValue={unit.name}
+                {...register("name")}
               />
             </div>
             <div>
@@ -70,6 +91,7 @@ export default function UnitSystemInfo({ unit }) {
                 className="infoColumn pl-2"
                 type="text"
                 defaultValue={unit.owner}
+                {...register("owner")}
               />
             </div>
             <div>
@@ -78,6 +100,7 @@ export default function UnitSystemInfo({ unit }) {
                 className="infoColumn pl-2"
                 type="text"
                 defaultValue={unit.registered}
+                {...register("registered")}
               />
             </div>
             <div>
@@ -86,6 +109,7 @@ export default function UnitSystemInfo({ unit }) {
                 className="infoColumn pl-2"
                 type="text"
                 defaultValue={unit.serialNumber}
+                {...register("serial")}
               />
             </div>
             <div>
@@ -94,6 +118,17 @@ export default function UnitSystemInfo({ unit }) {
                 className="infoColumn pl-2"
                 type="text"
                 defaultValue={unit.firmware}
+                {...register("firmware")}
+              />
+            </div>
+
+            <div>
+              <p className="font-thin mx-2 mb-px">Location:</p>
+              <input
+                className="infoColumn pl-2"
+                type="text"
+                defaultValue={unit.location}
+                {...register("location")}
               />
             </div>
             <div>
@@ -102,14 +137,16 @@ export default function UnitSystemInfo({ unit }) {
                 className="infoColumn pl-2"
                 type="text"
                 defaultValue={unit.eyesSerial}
+                {...register("eyesSerial")}
               />
             </div>
             <div>
-              <p className="font-thin mx-2 mb-px">Location:</p>
+              <p className="font-thin mx-2 mb-px">EyesFirmware:</p>
               <input
                 className="infoColumn pl-2"
                 type="text"
-                defaultValue={unit.location}
+                defaultValue={unit.eyesFirmware}
+                {...register("eyesFirmware")}
               />
             </div>
           </div>
@@ -136,7 +173,7 @@ export default function UnitSystemInfo({ unit }) {
               disabled
               className="infoColumn pl-2"
               type="text"
-              defaultValue={unit.name}
+              value={unit.name}
             />
           </div>
           <div>
@@ -145,7 +182,7 @@ export default function UnitSystemInfo({ unit }) {
               disabled
               className="infoColumn pl-2"
               type="text"
-              defaultValue={unit.owner}
+              value={unit.owner}
             />
           </div>
           <div>
@@ -154,7 +191,7 @@ export default function UnitSystemInfo({ unit }) {
               disabled
               className="infoColumn pl-2"
               type="text"
-              defaultValue={unit.registered}
+              value={unit.registered}
             />
           </div>
           <div>
@@ -163,7 +200,7 @@ export default function UnitSystemInfo({ unit }) {
               disabled
               className="infoColumn pl-2"
               type="text"
-              defaultValue={unit.serialNumber}
+              value={unit.serialNumber}
             />
           </div>
           <div>
@@ -172,16 +209,7 @@ export default function UnitSystemInfo({ unit }) {
               disabled
               className="infoColumn pl-2"
               type="text"
-              defaultValue={unit.firmware}
-            />
-          </div>
-          <div>
-            <p className="font-thin mx-2 mb-px">EyesSerial:</p>
-            <input
-              disabled
-              className="infoColumn pl-2"
-              type="text"
-              defaultValue={unit.eyesSerial}
+              value={unit.firmware}
             />
           </div>
           <div>
@@ -190,7 +218,25 @@ export default function UnitSystemInfo({ unit }) {
               disabled
               className="infoColumn pl-2"
               type="text"
-              defaultValue={unit.location}
+              value={unit.location}
+            />
+          </div>
+          <div>
+            <p className="font-thin mx-2 mb-px">EyesSerial:</p>
+            <input
+              disabled
+              className="infoColumn pl-2"
+              type="text"
+              value={unit.eyesSerial}
+            />
+          </div>
+          <div>
+            <p className="font-thin mx-2 mb-px">EyesFirmware:</p>
+            <input
+              disabled
+              className="infoColumn pl-2"
+              type="text"
+              value={unit.eyesFirmware}
             />
           </div>
         </div>
@@ -198,11 +244,3 @@ export default function UnitSystemInfo({ unit }) {
     </div>
   );
 }
-
-const schema = yup
-  .object({
-    userName: yup.string().required("Please enter Username"),
-    passWord: yup.string().required("Please enter Password"),
-  })
-  .required();
-type FormData = yup.InferType<typeof schema>;

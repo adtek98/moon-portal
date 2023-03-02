@@ -34,8 +34,22 @@ export default function UnitSystemInfo({ unit }) {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = async (event) => {
-    console.log(event);
+  const onSubmit = async (data: FormData) => {
+    try {
+      const response = await fetch(
+        `http://localhost:3000/api/unit/${unit.serialNumber}`,
+        {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
+      const res = await response.json();
+      console.log(res);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleClick = (e) => {
@@ -52,13 +66,7 @@ export default function UnitSystemInfo({ unit }) {
     return (
       <div className="infoContainer col-span-2 row-span-2">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div
-            className="font-bold text-xl mb  const onSubmit = async (event) => {
-    event.preventDefault();
-
-    console.log(event.FormData);
-  };-3 mt-1 border border-gray-500 border-x-0 border-t-0 flex justify-between items-end"
-          >
+          <div className="font-bold text-xl mb-3 mt-1 border border-gray-500 border-x-0 border-t-0 flex justify-between items-end">
             <h1 className="mr-4">SYSTEM INFO - edit mode</h1>
             <div className="flex">
               <button

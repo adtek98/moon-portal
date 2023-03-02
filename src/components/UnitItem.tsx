@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 
 export const UnitItem = ({ units }) => {
@@ -20,7 +19,7 @@ export const UnitItem = ({ units }) => {
           <td>
             <p className="text-sm">{unit.serialNumber}</p>
           </td>
-          <td className="">{unit.owner}</td>{" "}
+          <td className="">{unit.owner}</td>
         </tr>
       ))}
     </>

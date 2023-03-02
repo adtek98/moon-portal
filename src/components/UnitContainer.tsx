@@ -57,9 +57,9 @@ export const UnitContainer = ({ units }) => {
         />
       </div>
       <div className="max-h-[90%] overflow-auto">
-        <table className="mx-auto md:w-11/12 lg:w-11/12">
-          <thead className="sticky">
-            <tr className="text-center shadow-xl">
+        <table className="mx-auto md:w-full lg:w-full">
+          <thead className="">
+            <tr className="text-center text-lg underline">
               <th className="w-1/4">Name</th>
               <th className="w-1/4">Location</th>
               <th className="w-1/4">Serial Number</th>

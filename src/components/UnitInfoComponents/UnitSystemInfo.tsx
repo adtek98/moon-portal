@@ -1,32 +1,60 @@
-import { faL, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
+import {
+  CheckIcon,
+  PencilSquareIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/solid";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import * as yup from "yup";
 
 export default function UnitSystemInfo({ unit }) {
   const [editable, setEditable] = useState(false);
 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = () => {};
+
   const handleClick = (e) => {
     e.preventDefault();
+    console.log(e);
     if (editable) {
       setEditable(false);
+      toast.info("Edit mode deactivated");
     } else {
       setEditable(true);
+      toast.info("Edit mode activated");
     }
   };
   if (editable) {
     return (
       <div className="infoContainer col-span-2 row-span-2">
-        <div className="font-bold text-xl mb-3 border border-gray-500 border-x-0 border-t-0 flex justify-between items-end">
-          <h1 className="mr-4">SYSTEM INFO - edit mode</h1>
-          <button
-            className="text text-gray-500 hover:text-white text-2xl"
-            onClick={(e) => handleClick(e)}
-          >
-            <FontAwesomeIcon icon={faPenToSquare} />
-          </button>
-        </div>
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="font-bold text-xl mb-3 mt-1 border border-gray-500 border-x-0 border-t-0 flex justify-between items-end">
+            <h1 className="mr-4">SYSTEM INFO - edit mode</h1>
+            <div className="flex">
+              <button
+                className="mr-3 text-gray-500 hover:text-white text-2xl"
+                onClick={(e) => handleClick(e)}
+                type="submit"
+              >
+                <CheckIcon className="w-7 h-7" />
+              </button>
+              <button
+                className=" text-gray-500 hover:text-white text-2xl"
+                onClick={(e) => handleClick(e)}
+              >
+                <XMarkIcon className="w-7 h-7" />
+              </button>
+            </div>
+          </div>
           <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-4">
             <div>
               <p className="font-thin mx-2 mb-px">Unit Name:</p>
@@ -91,13 +119,13 @@ export default function UnitSystemInfo({ unit }) {
   }
   return (
     <div className="infoContainer col-span-2 row-span-2">
-      <div className="font-bold text-xl mb-3 border border-gray-500 border-x-0 border-t-0 flex justify-between items-end">
+      <div className="font-bold text-xl mb-3 mt-1 border border-gray-500 border-x-0 border-t-0 flex justify-between items-end">
         <h1 className="mr-4">SYSTEM INFO</h1>
         <button
           className="text text-gray-500 hover:text-white text-2xl"
           onClick={(e) => handleClick(e)}
         >
-          <FontAwesomeIcon icon={faPenToSquare} />
+          <PencilSquareIcon className="w-7 h-7 align-middle" />
         </button>
       </div>
       <form>
@@ -170,3 +198,11 @@ export default function UnitSystemInfo({ unit }) {
     </div>
   );
 }
+
+const schema = yup
+  .object({
+    userName: yup.string().required("Please enter Username"),
+    passWord: yup.string().required("Please enter Password"),
+  })
+  .required();
+type FormData = yup.InferType<typeof schema>;

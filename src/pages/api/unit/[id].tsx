@@ -7,16 +7,7 @@ export default async function handler(req, res) {
       const newUnit = req.body;
 
       const index = units.findIndex((x) => x.serialNumber === req.query.id);
-      units[index] = {
-        name: newUnit.name,
-        registered: newUnit.registered,
-        owner: newUnit.owner,
-        firmware: newUnit.firmware,
-        eyesSerial: newUnit.eyesSerial,
-        eyesFirmware: newUnit.eyesFirmware,
-        serialNumber: newUnit.serialNumber,
-        location: newUnit.location,
-      };
+      units[index] = newUnit;
       res.status(200).json(units[index]);
       break;
 

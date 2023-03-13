@@ -47,8 +47,11 @@ export default function UnitSystemInfo({ unit }) {
 
       const res = await response.json();
       console.log(res);
+      toast.success("Successfully updated the unit!");
+      setEditable(false);
     } catch (error) {
       console.error(error);
+      toast.error("Something went wrong, try again later.");
     }
   };
 

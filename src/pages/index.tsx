@@ -61,10 +61,10 @@ export default function Home({ units }) {
         </div>
         <div className="infoContainer col-span-1">
           <div className="font-bold text-xl mb-3 mt-1 border border-gray-500 border-x-0 border-t-0 flex justify-between items-end">
-            <h1 className="">Recently Updated</h1>
+            <h1 className="">Critical logs</h1>
           </div>
           <p className="font-semibold">
-            Most recently updated device:
+            Most recent critical logs are from device: {units[3].name}
             <span className="text-red-400"> {units[0].name}</span>
           </p>
           <Link className="underline text-gray-400 hover:text-white" href={""}>
@@ -77,63 +77,14 @@ export default function Home({ units }) {
             View all
           </Link>
         </div>
-        <div className="infoContainer lg:col-span-4 lg:row-span-4 md:row-span-2 md:col-span-2">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            numquam reiciendis non dolores impedit enim nulla modi fugiat, illum
-            magnam molestias expedita. Corrupti, qui facere error consequatur
-            eos facilis sit!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            numquam reiciendis non dolores impedit enim nulla modi fugiat, illum
-            magnam molestias expedita. Corrupti, qui facere error consequatur
-            eos facilis sit!
-          </p>{" "}
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            numquam reiciendis non dolores impedit enim nulla modi fugiat, illum
-            magnam molestias expedita. Corrupti, qui facere error consequatur
-            eos facilis sit!
-          </p>{" "}
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            numquam reiciendis non dolores impedit enim nulla modi fugiat, illum
-            magnam molestias expedita. Corrupti, qui facere error consequatur
-            eos facilis sit!
-          </p>{" "}
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            numquam reiciendis non dolores impedit enim nulla modi fugiat, illum
-            magnam molestias expedita. Corrupti, qui facere error consequatur
-            eos facilis sit!
-          </p>{" "}
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            numquam reiciendis non dolores impedit enim nulla modi fugiat, illum
-            magnam molestias expedita. Corrupti, qui facere error consequatur
-            eos facilis sit!
-          </p>{" "}
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            numquam reiciendis non dolores impedit enim nulla modi fugiat, illum
-            magnam molestias expedita. Corrupti, qui facere error consequatur
-            eos facilis sit!
-          </p>{" "}
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-            numquam reiciendis non dolores impedit enim nulla modi fugiat, illum
-            magnam molestias expedita. Corrupti, qui facere error consequatur
-            eos facilis sit!
-          </p>
-        </div>
+        <div className="infoContainer lg:col-span-4 lg:row-span-4 md:row-span-2 md:col-span-2"></div>
       </div>
     </>
   );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch("https://63c5ab2bf80fabd877edd241.mockapi.io/units");
+  const res = await fetch("http://localhost:3000/api/units");
   const units = await res.json();
 
   return {

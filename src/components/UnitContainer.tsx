@@ -39,7 +39,7 @@ export const UnitContainer = ({ units }) => {
         <select
           onChange={(e) => setSorting(e.target.value)}
           defaultValue={"DEFAULT"}
-          className="focus:fo h-10 lg:w-1/6 w-44 bg-gray-700 my-3 text-center border border-gray-400 border-x-0 border-t-0 text-gray-400"
+          className="focus:fo h-10 lg:w-1/6 w-44 bg-black my-3 text-center border border-gray-400 border-x-0 border-t-0 text-gray-400"
         >
           <option value={"DEFAULT"} hidden>
             SORT AFTER
@@ -51,13 +51,13 @@ export const UnitContainer = ({ units }) => {
         </select>
         <input
           type="text"
-          className="h-10 lg:w-1/6 w-44 bg-gray-700 text-center border border-gray-400 border-x-0 border-t-0"
+          className="h-10 lg:w-1/6 w-44 text-center bg-black border border-gray-400 border-x-0 border-t-0"
           placeholder="SEARCH"
           onChange={(e) => setQuery(e.target.value)}
         />
       </div>
       <div className="max-h-[90%] overflow-auto">
-        <table className="mx-auto md:w-full lg:w-full">
+        <table className="mx-auto md:w-full lg:w-full bg-black">
           <thead className="">
             <tr className="text-center text-lg underline">
               <th className="w-1/4">Name</th>

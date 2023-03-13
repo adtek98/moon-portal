@@ -13,7 +13,7 @@ export default function Fleet({ units }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch("https://63c5ab2bf80fabd877edd241.mockapi.io/units");
+  const res = await fetch("http://localhost:3000/api/units/");
   const units = await res.json();
 
   return {

@@ -29,7 +29,7 @@ export default function Unit({ unit }) {
 
 export const getStaticProps: GetServerSideProps = async (context) => {
   const res = await fetch(
-    `https://63c5ab2bf80fabd877edd241.mockapi.io/units/${context.params.serialnumber}`
+    `http://localhost:3000/api/unit/${context.params.serialnumber}`
   );
   const unit = await res.json();
 
@@ -41,7 +41,7 @@ export const getStaticProps: GetServerSideProps = async (context) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch(`https://63c5ab2bf80fabd877edd241.mockapi.io/units`);
+  const res = await fetch(`http://localhost:3000/api/units`);
   const units = await res.json();
 
   const paths = units.map((unit) => {

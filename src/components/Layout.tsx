@@ -29,7 +29,7 @@ export const Layout = ({ children }) => {
   }
   return (
     <>
-      <main className={`h-screen max-h-screen overflow-hidden font-mono`}>
+      <main className={`h-screen max-h-screen overflow-hidden font-sans`}>
         <Header />
         <PortalLayout>{children}</PortalLayout>
       </main>

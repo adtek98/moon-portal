@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function PortalLayout({ children }) {
   return (
-    <div className="flex noselect h-[94%] lg:bg-[url('/LoginBg.png')] bg-contain bg-repeat-round">
+    <div className="flex noselect h-[94%]">
       <div className="py-12 px-10 w-1/6 text-center md:text-sm font-semibold text-gray-500 hidden md:block lg:block">
         <Nav />
       </div>

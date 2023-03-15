@@ -34,12 +34,12 @@ export const UnitContainer = ({ units }) => {
   };
 
   return (
-    <>
-      <div className="m-auto flex justify-between items-center h-[10%]">
+    <div className="py-2 h-full flex flex-col gap-5">
+      <div className="w-full m-auto flex justify-between items-center h-[10%] infoContainer">
         <select
           onChange={(e) => setSorting(e.target.value)}
           defaultValue={"DEFAULT"}
-          className="focus:fo h-10 lg:w-1/6 w-44 bg-black my-3 text-center border border-gray-400 border-x-0 border-t-0 text-gray-400"
+          className="focus:fo h-10 lg:w-1/6 w-44 bg-gray-900 my-3 text-center border border-gray-400 border-x-0 border-t-0 text-gray-400"
         >
           <option value={"DEFAULT"} hidden>
             SORT AFTER
@@ -51,13 +51,13 @@ export const UnitContainer = ({ units }) => {
         </select>
         <input
           type="text"
-          className="h-10 lg:w-1/6 w-44 text-center bg-black border border-gray-400 border-x-0 border-t-0"
+          className="h-10 lg:w-1/6 w-44 text-center bg-gray-900 border border-gray-400 border-x-0 border-t-0"
           placeholder="SEARCH"
           onChange={(e) => setQuery(e.target.value)}
         />
       </div>
-      <div className="max-h-[90%] overflow-auto">
-        <table className="mx-auto md:w-full lg:w-full bg-black">
+      <div className="row-span-4 max-h-[90%] overflow-auto infoContainer">
+        <table className="mx-auto md:w-full lg:w-full ">
           <thead className="">
             <tr className="text-center text-lg underline">
               <th className="w-1/4">Name</th>
@@ -71,6 +71,6 @@ export const UnitContainer = ({ units }) => {
           </tbody>
         </table>
       </div>
-    </>
+    </div>
   );
 };

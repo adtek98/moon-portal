@@ -36,7 +36,7 @@ a {
 }
 
 .infoContainer {
-  @apply px-2 py-5 bg-gray-900 p-1 text-sm rounded-sm shadow-xl border border-gray-700;
+  @apply px-2 py-5 bg-gray-800 p-1 text-sm rounded-sm shadow-xl;
 }
 
 .infoColumn {

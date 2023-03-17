@@ -7,6 +7,7 @@ export default function Fleet({ units }) {
   return (
     <>
       <TitleContainer title={title} children={undefined}></TitleContainer>
+
       <UnitContainer units={units} />
     </>
   );

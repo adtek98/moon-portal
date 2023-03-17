@@ -3,15 +3,45 @@ import { Header } from "./Header";
 import PortalLayout from "./PortalLayout";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
 
 export const Layout = ({ children }) => {
   const router = useRouter();
   if (router.pathname == "/login") {
     return (
       <>
-        <main className={`h-screen max-h-screen overflow-hidden font-sans`}>
+        <main
+          className={`h-screen max-h-screen overflow-hidden ${inter.variable} font-inter`}
+        >
           {children}
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+          />
         </main>
+      </>
+    );
+  }
+  return (
+    <>
+      <main
+        className={`h-screen max-h-screen overflow-hidden ${inter.variable} font-inter`}
+      >
+        <Header />
+        <PortalLayout>{children}</PortalLayout>
         <ToastContainer
           position="top-right"
           autoClose={5000}
@@ -24,27 +54,7 @@ export const Layout = ({ children }) => {
           pauseOnHover
           theme="dark"
         />
-      </>
-    );
-  }
-  return (
-    <>
-      <main className={`h-screen max-h-screen overflow-hidden font-sans`}>
-        <Header />
-        <PortalLayout>{children}</PortalLayout>
       </main>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
     </>
   );
 };

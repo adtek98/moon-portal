@@ -3,9 +3,9 @@ import { Header } from "./Header";
 import PortalLayout from "./PortalLayout";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 
-const inter = Inter({
+const inter = Montserrat({
   variable: "--font-inter",
   subsets: ["latin"],
 });

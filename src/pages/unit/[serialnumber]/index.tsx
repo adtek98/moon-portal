@@ -16,13 +16,12 @@ export default function Unit({ unit }) {
           <ArrowLongLeftIcon className="w-12 h-12" />
         </Link>
       </TitleContainer>
-      <div className="py-2 grid md:grid-cols-4 lg:grid-cols-4 lg:grid-rows-3 gap-5 h-full">
+      <div className="grid md:grid-cols-4 lg:grid-cols-4 lg:grid-rows-3 gap-5 h-full">
         <UnitSystemInfo unit={unit} />
+        <UnitSupport unit={unit} />
         <UnitMetaData />
-
         <UnitBillingData />
         <UnitUserData />
-        <UnitSupport />
       </div>
     </>
   );

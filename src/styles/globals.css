@@ -40,9 +40,9 @@ a {
 }
 
 .infoColumn {
-  @apply bg-gray-700 h-10 w-full rounded-sm flex items-center justify-between;
+  @apply bg-gray-600 h-10 w-full rounded-sm flex items-center justify-between;
 }
 
 .infoButton {
-  @apply bg-gray-800 h-full w-24 rounded-r-sm hover:bg-gray-900;
+  @apply bg-gray-700 h-full w-24 rounded-r-sm hover:bg-gray-900;
 }

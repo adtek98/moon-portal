@@ -3,7 +3,6 @@ import Link from "next/link";
 const routes = [
   { name: "HOME", path: "/" },
   { name: "FLEET", path: "/fleet" },
-  { name: "ADD UNIT", path: "/newunit" },
 ];
 
 export const Nav = () => {

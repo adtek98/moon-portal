@@ -7,7 +7,7 @@ export default function Home({ units }) {
   return (
     <>
       <TitleContainer title={title} children={undefined}></TitleContainer>
-      <div className="py-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 grid-rows-4 h-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 grid-rows-4 h-full">
         <div className="infoContainer col-span-1">
           <div className="font-bold text-xl mb-3 mt-1 border border-gray-500 border-x-0 border-t-0 flex justify-between items-end">
             <h1 className="">Fleet</h1>

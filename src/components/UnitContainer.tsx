@@ -34,9 +34,9 @@ export const UnitContainer = ({ units }) => {
   };
 
   return (
-    <div className="py-2 grid grid-cols-1 gap-5 grid-rows-1 h-full">
+    <div className="grid grid-cols-1 gap-5 grid-rows-1 h-full">
       <div className="flex flex-col gap-5 infoContainer h-full ">
-        <div className="w-full m-auto flex justify-between items-center h-[10%]">
+        <div className="w-full m-auto flex justify-between items-center h-[10%] px-10">
           <select
             onChange={(e) => setSorting(e.target.value)}
             defaultValue={"DEFAULT"}
@@ -57,7 +57,7 @@ export const UnitContainer = ({ units }) => {
             onChange={(e) => setQuery(e.target.value)}
           />
         </div>
-        <div className="row-span-4 max-h-[90%] overflow-auto">
+        <div className="row-span-4 h-[90%] overflow-auto">
           <table className="mx-auto md:w-full lg:w-full ">
             <thead className="">
               <tr className="text-center text-lg underline">

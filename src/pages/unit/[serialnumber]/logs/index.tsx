@@ -3,18 +3,28 @@ import { GetServerSideProps, GetStaticPaths } from "next";
 import Link from "next/link";
 import React from "react";
 import TitleContainer from "../../../../components/TitleContainer";
+import logs from "../../../../../lib/data/logs";
 
 export default function Logs({ unit }) {
   return (
     <>
       <TitleContainer title={"Logs - " + unit.name}>
-        <Link href="/fleet">
+        <Link href={`/unit/${unit.serialNumber}`}>
           <ArrowLongLeftIcon className="h-12 w-12 text-gray-500 hover:text-white" />
         </Link>
       </TitleContainer>
 
-      <div className="py-2 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5 grid-rows-1 h-full">
-        <div className="infoContainer px-2 py-4 p-1 rounded-sm mt-2 mx-auto w-full"></div>
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-5 grid-rows-1 h-full">
+        <div className="infoContainer overflow-auto">
+          {logs.map((item, index) => (
+            <div key={index} className="mb-4 border-b">
+              <p>{item.message.resource["service.name"]}</p>
+              <p>Type: {item.message.severity_text}</p>
+              <p>Message: {item.message.body}</p>
+              <p>Date: {Date(item.timestamp)}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );

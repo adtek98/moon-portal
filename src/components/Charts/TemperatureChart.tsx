@@ -13,7 +13,7 @@ import metrics from "../../../lib/data/metrics";
 export default function TemperatureChart() {
   const data = metrics.tempratures.map((item) => {
     const DateAndTime = item.timestamp.split(" ");
-    var x = {
+    let x = {
       date: DateAndTime[0],
       time: DateAndTime[1],
       CPU: item.cpuTemp,

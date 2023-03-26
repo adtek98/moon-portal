@@ -8,25 +8,18 @@ const routes = [
 export const Nav = () => {
   return (
     <>
-      <nav className="h-full w-fit lg:w-full mx-auto">
-        <ul className="h-[95%]">
+      <nav className="mx-auto h-full">
+        <ul className="flex  gap-5">
           {routes.map((r) => (
             <li
               key={r.name}
-              className="border border-x-0 border-t-0 my-3 border-gray-500 hover:border-white hover:text-white active:text-white"
+              className="border border-x-0 border-t-0 my-3 border-gray-500 hover:border-white hover:text-white active:text-white "
             >
               <Link href={r.path}>
                 <p>{r.name}</p>
               </Link>
             </li>
           ))}
-        </ul>
-        <ul className="h-[5%]">
-          <li className="border border-x-0 border-t-0 my-3 border-gray-500 hover:border-white hover:text-white">
-            <Link href="/login">
-              <p>LOG OUT</p>
-            </Link>
-          </li>
         </ul>
       </nav>
     </>

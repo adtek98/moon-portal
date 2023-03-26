@@ -2,13 +2,15 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useRouter } from "next/router";
-import Users from "../../lib/data/Users";
 import { toast } from "react-toastify";
 import { RocketLaunchIcon } from "@heroicons/react/24/solid";
+import { signIn } from "next-auth/react";
+
 const schema = yup
   .object({
     userName: yup.string().required("Please enter Username"),
     passWord: yup.string().required("Please enter Password"),
+    redirect: yup.boolean().required().default(false),
   })
   .required();
 type FormData = yup.InferType<typeof schema>;
@@ -22,17 +24,20 @@ export default function LoginForm() {
   } = useForm<FormData>({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data: FormData) => {
-    const user = Users.user.find(
-      (user) =>
-        user.username === data.userName && user.password === data.passWord
-    );
-    if (user != null) {
+  const onSubmit = async (data: FormData) => {
+    const result = await signIn("credentials", data);
+
+    if (result?.error) {
+      // handle login error
+      toast.error(result?.error);
+    } else {
+      // handle successful login
       toast.success("Login was successfull, Welcome!");
       router.push("/");
       return;
     }
-    toast.error("Username or password does not match, please try again");
+
+    // toast.error("Username or password does not match, please try again");
   };
   return (
     <div className="lg:w-[28rem] md:w-[32rem] px-10">

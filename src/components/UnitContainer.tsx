@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { UnitItem } from "./UnitItem";
+import { Unit, UnitProps } from "../../types";
 
-export const UnitContainer = ({ units }) => {
+export const UnitContainer = ({ units }: UnitProps) => {
   const [sorting, setSorting] = useState("DEFAULT");
   const [query, setQuery] = useState("");
 
   // search function
-  const search = (data) => {
+  const search = (data: Unit[]) => {
     return data.filter(
-      (item) =>
+      (item: Unit) =>
         item.name.toLowerCase().includes(query.toLowerCase()) ||
         item.location.toLowerCase().includes(query.toLowerCase()) ||
         item.serialNumber.includes(query.toLowerCase())
@@ -16,7 +17,7 @@ export const UnitContainer = ({ units }) => {
   };
 
   // sorting function
-  const sortList = (data) => {
+  const sortList = (data: Unit[]) => {
     if (sorting == "n:a>z") {
       return data.sort((a, b) => (a.name > b.name ? 1 : -1));
     }
@@ -35,12 +36,12 @@ export const UnitContainer = ({ units }) => {
 
   return (
     <div className="grid grid-cols-1 gap-5 grid-rows-1 h-full">
-      <div className="flex flex-col gap-5 infoContainer h-full ">
-        <div className="w-full m-auto flex justify-between items-center h-[10%] px-10">
+      <div className="flex flex-col infoContainer h-full ">
+        <div className="w-full mx-auto flex gap-5 items-center h-[7%] px-4">
           <select
             onChange={(e) => setSorting(e.target.value)}
             defaultValue={"DEFAULT"}
-            className="focus:fo h-10 lg:w-1/6 w-44 bg-gray-800 my-3 text-center border border-gray-400 border-x-0 border-t-0 text-gray-400"
+            className="h-10 lg:w-1/6 w-44 bg-gray-700 my-3 text-center border rounded-md border-gray-400 text-gray-400"
           >
             <option value={"DEFAULT"} hidden>
               SORT AFTER
@@ -52,25 +53,23 @@ export const UnitContainer = ({ units }) => {
           </select>
           <input
             type="text"
-            className="h-10 lg:w-1/6 w-44 text-center bg-gray-800 border border-gray-400 border-x-0 border-t-0"
+            className="h-10 lg:w-1/6 w-44 text-center bg-gray-700 border border-gray-400 rounded-md"
             placeholder="SEARCH"
             onChange={(e) => setQuery(e.target.value)}
           />
         </div>
-        <div className="row-span-4 h-[90%] overflow-auto">
-          <table className="mx-auto md:w-full lg:w-full ">
-            <thead className="">
-              <tr className="text-center text-lg underline">
-                <th className="w-1/4">Name</th>
-                <th className="w-1/4">Location</th>
-                <th className="w-1/4">Serial Number</th>
-                <th className="w-1/4">Owner</th>
-              </tr>
-            </thead>
-            <tbody>
-              <UnitItem units={sortList(search(units))} />
-            </tbody>
-          </table>
+        <div className="row-span-4 h-[93%] px-4 pt-4 pb-1">
+          <div className="border-b border-gray-500">
+            <div className="flex text-center font-medium">
+              <p className="w-1/4">Name</p>
+              <p className="w-1/4">Location</p>
+              <p className="w-1/4">Serial Number</p>
+              <p className="w-1/4">Owner</p>
+            </div>
+          </div>
+          <div className="h-[96%] overflow-auto w-full">
+            <UnitItem units={sortList(search(units))} />
+          </div>
         </div>
       </div>
     </div>
